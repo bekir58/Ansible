@@ -1,0 +1,18 @@
+
+
+- hosts: all
+  gather_facts: true
+  become: yes # user als root ausgefuehrt
+  # become_user: junior
+  tasks:
+    - name: Installiere httpd mit yum
+      yum:
+        name: httpd
+        state: present  # state: present zu installieren
+      when: ansible_distribution != "Ubuntu"
+    - name: Installiere apache2 mit apt
+      apt:
+        name: apache2
+        state: present
+      when: ansible_distribution == "Ubuntu"   
+

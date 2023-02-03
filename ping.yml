@@ -1,0 +1,8 @@
+# ansible-playbook ping.yml -i hosts.ini
+
+- name: Ping Test
+  hosts: all
+  tasks:
+    - name: 'Ping Task'
+      ping:
+

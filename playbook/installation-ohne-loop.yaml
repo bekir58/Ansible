@@ -1,0 +1,17 @@
+
+# hier wird php / unzip / git installiert
+
+- hosts: db
+  gather_facts: true
+  become: yes
+  tasks:
+    - yum: 
+        name: php
+        state: present
+    - yum:
+        name: unzip
+        state: present
+    - yum:
+        name: git
+        state: latest
+

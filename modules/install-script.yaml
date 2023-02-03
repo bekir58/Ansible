@@ -1,0 +1,13 @@
+
+
+- hosts: db
+  tasks:
+    - name: Ausfuhren des Skripts
+      script: /tmp/install_script.sh
+      args:
+        creates: /tmp/meine_Datei_1.txt
+
+
+# /tmp/install_script.sh    ===  olusturuyoruz
+# /tmp/install_script.sh calistirilacak
+# bu script dosyasi /tmp/meine_Datei_1.txt dosyasini olusturacak

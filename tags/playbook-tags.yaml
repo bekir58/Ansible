@@ -1,0 +1,25 @@
+
+
+--- 
+- name: Play mit 3 Tasks
+  hosts: db
+  gather_facts: false
+  tasks:
+    - debug: 
+        msg: "Das ist die erste Task"
+      tags:
+        - eins
+        - config
+
+    - debug: 
+        msg: "Das ist die zweite Task"
+      tags:
+        - zwei
+
+    - debug: 
+        msg: "Das ist die dritte Task"
+      tags:
+        - drei
+        - always    #   herzaman caliscak
+
+

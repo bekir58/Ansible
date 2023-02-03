@@ -1,0 +1,9 @@
+
+-  name: Kopiere eiene Datei auf Server
+   hosts: all
+   tasks:
+     - name: Datei Kopieren
+       copy:
+         src: /root/Desktop/Ansible/my-text.txt
+         dest: /etc/my-text.txt
+

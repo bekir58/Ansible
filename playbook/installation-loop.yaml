@@ -1,0 +1,16 @@
+
+# hier wird php / unzip / git installiert bzw. deinstalliert
+
+- hosts: db
+  gather_facts: false
+  become: yes
+  tasks:
+    - yum: 
+        name: "{{item}}"
+        state: absent   # wird deinstalliert wenn installiert ist
+        # state: present   # present für installation
+      loop: 
+        - php 
+        - unzip
+        - git
+
